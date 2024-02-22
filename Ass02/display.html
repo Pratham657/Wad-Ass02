@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Additional custom styles */
+        .registration-details-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-details p {
+            margin-bottom: 10px;
+        }
+
+        .registration-details strong {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Registration Details</h1>
+        <div id="registrationDetails" class="mt-3 registration-details-container">
+        </div>
+    </div>
+
+    <script>
+        // Retrieve form data from localStorage
+        var users = JSON.parse(localStorage.getItem('users'));
+
+        // Display form data
+        var registrationDetails = document.getElementById('registrationDetails');
+        registrationDetails.innerHTML = `
+            <div class="registration-details">
+         
+                <p><strong>Name:</strong> ${users[0].name}</p>
+                <p><strong>Email:</strong> ${users[0].email}</p>
+                <p><strong>Address:</strong> ${users[0].address}</p>
+                <p><strong>Mobile No:</strong> ${users[0].mobileno}</p>
+                <p><strong>Gender:</strong> ${users[0].gender}</p>
+                <p><strong>Account Type:</strong> ${users[0].AccountType}</p>
+                <p><strong>Country:</strong> ${users[0].Country}</p>
+            </div>
+        `;
+    </script>
+</body>
+
+</html>
